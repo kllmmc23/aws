@@ -1,6 +1,6 @@
 import React from "react";
 
-const NameTag = ({ firstName, lastName }) => {
+function NameTag({ firstName, lastName, style }) {
   if (!firstName && !lastName) {
     return (
       <div className="name">
@@ -11,11 +11,11 @@ const NameTag = ({ firstName, lastName }) => {
 
   return (
     <div className="name">
-      <h3>First Name: {firstName}</h3>
-      <h3>Last Name: {lastName}</h3>
+      <h3 style={style}>First Name: {firstName}</h3>
+      <h3 style={style}>Last Name: {lastName}</h3>
       {firstName === "John" && <div style={{ color: "green" }}>VIP</div>}
     </div>
   );
-};
+}
 
 export default NameTag;
