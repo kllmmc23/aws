@@ -18,7 +18,14 @@ const makeGreen = (BaseComponent) => (props) => {
   return <BaseComponent {...newProps} />;
 };
 
-const GreenNameTag = makeGreen(NameTag)
+const removeInline = (BaseComponent) => (props) => {
+  const newProps = { ...props };
+  delete newProps.style;
+  return <BaseComponent {...newProps} />;
+};
+
+const GreenNameTag = makeGreen(NameTag);
+const CleanNameTag = removeInline(NameTag);
 
 function App() {
   return (
@@ -27,9 +34,17 @@ function App() {
         <Input placeholder="enter here" type="text" />
 
         <h1 className="name title">Names list</h1>
+
         <GreenNameTag firstName="Peter" lastName="Wilson" />
-        <NameTag firstName="John" lastName="Smith" />
-        <NameTag firstName="Jill" lastName="Bell" />
+
+        <CleanNameTag
+          style={{ color: "red" }}
+          firstName="John"
+          lastName="Smith"
+        />
+
+        <NameTag style={{ color: "red" }} firstName="Jill" lastName="Bell" />
+
         <NameTag></NameTag>
       </header>
     </div>
