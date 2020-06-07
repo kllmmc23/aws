@@ -1,51 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.scss";
-import NameTag from "./Components/NameTags";
-import Input from "./Components/Input";
-
-const makeGreen = (BaseComponent) => (props) => {
-  const addGreen = {
-    style: {
-      color: "green",
-    },
-  };
-
-  const newProps = {
-    ...props,
-    ...addGreen,
-  };
-
-  return <BaseComponent {...newProps} />;
-};
-
-const removeInline = (BaseComponent) => (props) => {
-  const newProps = { ...props };
-  delete newProps.style;
-  return <BaseComponent {...newProps} />;
-};
-
-const GreenNameTag = makeGreen(NameTag);
-const CleanNameTag = removeInline(NameTag);
 
 function App() {
+  const [age, setAge] = useState(21);
+  const ageUpHandle = () => {
+    setAge(age + 1);
+    };
+    
+    const ageDownHandle = () => {
+      setAge(age - 1);
+    };
+
   return (
     <div className="App">
       <header className="App-header">
-        <Input placeholder="enter here" type="text" />
-
-        <h1 className="name title">Names list</h1>
-
-        <GreenNameTag firstName="Peter" lastName="Wilson" />
-
-        <CleanNameTag
-          style={{ color: "red" }}
-          firstName="John"
-          lastName="Smith"
-        />
-
-        <NameTag style={{ color: "red" }} firstName="Jill" lastName="Bell" />
-
-        <NameTag></NameTag>
+        <h1>Use State hooks</h1>
+        <h2>Age: {age}</h2>
+        <button onClick={ageUpHandle}>Age up</button>
+        <button onClick={ageDownHandle}>Age down</button>
       </header>
     </div>
   );
