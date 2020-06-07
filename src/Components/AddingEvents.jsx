@@ -11,21 +11,28 @@ const initList = [
 function AddingEvents() {
   const [list, setList] = useState(initList);
 
-    const removeUnhealthyHandle = (e) => {
-        // const copyList = {...list}
-        const filterList = list.filter(v => v.calorie <= 50)
+    const removeItemHandle = (e) => {
+      console.dir(e.target.name);
+      
+        const filterList = list.filter(v => v.name !== e.target.name)
         setList(filterList)
-    }
-    
+  };
+
+  //   const removeUnhealthyHandle = (e) => {
+  //     // const copyList = {...list}
+  //     const filterList = list.filter((v) => v.calorie <= 50);
+  //     setList(filterList);
+  //   };
+
   return (
     <Fragment>
       <h2>Grocery list</h2>
       {list.map((v, id) => {
-        return <Item key={id} item={v} />;
+        return <Item key={id} item={v} onClick={removeItemHandle} />;
       })}
-      <button onClick={removeUnhealthyHandle} className="remove-button">
+      {/* <button onClick={removeUnhealthyHandle} className="remove-button">
         Remove Unhealthy
-      </button>
+      </button> */}
     </Fragment>
   );
 }
