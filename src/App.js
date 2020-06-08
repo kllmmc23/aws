@@ -1,15 +1,17 @@
 import React from "react";
 import "./sass/App.scss";
-import UseCustomHook from "./Components/LifeCycle/UseCustomHook";
+import SetUp from "./Components/Routers/SetUp";
+import { BrowserRouter as Router } from "react-router-dom";
 
 function App() {
-  
   return (
-    <div className="App">
-      <header className="App-header">
-        <UseCustomHook />
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          <SetUp />
+        </header>
+      </div>
+    </Router>
   );
 }
 
