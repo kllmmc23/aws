@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/App.scss";
-import UseEffectTime from "./Components/Hooks/UseEffectTime";
+import FetchData from "./Components/LifeCycle/FetchData";
 
 function App() {
   
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <UseEffectTime />
+        <FetchData />
       </header>
     </div>
   );
