@@ -1,14 +1,14 @@
 import React from "react";
 import "./sass/App.scss";
-import SetUp from "./Components/Routers/SetUp";
 import { BrowserRouter as Router } from "react-router-dom";
+import PromptRouter from "./Components/Routers/PromptRouter";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <SetUp />
+          <PromptRouter />
         </header>
       </div>
     </Router>
