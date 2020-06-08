@@ -1,14 +1,16 @@
 /* eslint-disable no-lone-blocks */
 import React from "react";
 import "./sass/App.scss";
-import AddingEvents from "./Components/AddingEvents";
+import OnChange from "./Components/OnChange";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <AddingEvents />
-      </header>
+        <header className="App-header">
+              
+              <OnChange />
+               
+        </header>
     </div>
   );
 }
