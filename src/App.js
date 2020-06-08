@@ -1,16 +1,14 @@
 /* eslint-disable no-lone-blocks */
 import React from "react";
 import "./sass/App.scss";
-import OnChange from "./Components/OnChange";
+import UseRef from "./Components/Hooks/UseRef";
 
 function App() {
   return (
     <div className="App">
-        <header className="App-header">
-              
-              <OnChange />
-               
-        </header>
+      <header className="App-header">
+        <UseRef />
+      </header>
     </div>
   );
 }
