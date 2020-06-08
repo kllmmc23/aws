@@ -10,7 +10,7 @@ function UseRef() {
     nameRef.current.focus();
   }, []);
 
-  function keyPressHandle(e) {
+ const keyPressHandle = (e) => {
     if (e.keyCode === 13 || e.keyCode === 40) {
       if (e.target.id === "nameInput") {
         ageRef.current.focus();
