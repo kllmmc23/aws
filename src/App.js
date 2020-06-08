@@ -1,6 +1,6 @@
 import React from "react";
 import "./sass/App.scss";
-import UseEffect from "./Components/Hooks/UseEffect";
+import UseEffectTime from "./Components/Hooks/UseEffectTime";
 
 function App() {
   
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <UseEffect />
+        <UseEffectTime />
       </header>
     </div>
   );
