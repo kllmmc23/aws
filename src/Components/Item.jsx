@@ -6,7 +6,7 @@ function Item(props) {
       {props.editable ? (
         <input
           type="text"
-          onKeyPress={e => props.onKeyPress(e, props.index)}
+          onKeyPress={(e) => props.onKeyPress(e, props.index)}
           defaultValue={props.item.name}
         />
       ) : (
