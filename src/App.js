@@ -1,13 +1,14 @@
-/* eslint-disable no-lone-blocks */
 import React from "react";
 import "./sass/App.scss";
-import ForwardingRefs from "./Components/Hooks/ForwardingRefs";
+import UseEffect from "./Components/Hooks/UseEffect";
 
 function App() {
+  
+
   return (
     <div className="App">
       <header className="App-header">
-        <ForwardingRefs />
+        <UseEffect />
       </header>
     </div>
   );
