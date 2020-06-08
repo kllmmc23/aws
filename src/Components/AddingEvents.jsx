@@ -9,7 +9,6 @@ const initList = [
 ];
 
 function AddingEvents() {
-
   const [list, setList] = useState(initList);
   const [editable, setEditable] = useState(false);
 
@@ -18,11 +17,19 @@ function AddingEvents() {
 
     const filterList = list.filter((v) => v.name !== e.target.name);
     setList(filterList);
-    };
-    
-    const makeEditableHandle = () => {
-        setEditable(true)
+  };
+
+  const makeEditableHandle = () => {
+    setEditable(true);
+  };
+
+  const keyPressHandle = (e,i) => {
+    if (e.key === "Enter") {
+      setEditable(!editable);
+      const copyList = [...list];
+      copyList[i].name = e.target.value;
     }
+  };
 
   //   const removeUnhealthyHandle = (e) => {
   //     // const copyList = {...list}
@@ -41,6 +48,8 @@ function AddingEvents() {
             onClick={removeItemHandle}
             editable={editable}
             onDoubleClick={makeEditableHandle}
+                onKeyPress={keyPressHandle}
+                index={id}
           />
         );
       })}
