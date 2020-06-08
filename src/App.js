@@ -1,14 +1,13 @@
 import React from "react";
 import "./sass/App.scss";
-import FetchData from "./Components/LifeCycle/FetchData";
+import UseCustomHook from "./Components/LifeCycle/UseCustomHook";
 
 function App() {
   
-
   return (
     <div className="App">
       <header className="App-header">
-        <FetchData />
+        <UseCustomHook />
       </header>
     </div>
   );
