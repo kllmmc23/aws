@@ -1,14 +1,15 @@
 import React from "react";
 import "./sass/App.scss";
 import { BrowserRouter as Router } from "react-router-dom";
-import PromptRouter from "./Components/Routers/PromptRouter";
+import ReactRedux from "./Redux/ReactRedux";
+
 
 function App() {
   return (
     <Router>
       <div className="App">
         <header className="App-header">
-          <PromptRouter />
+          <ReactRedux />
         </header>
       </div>
     </Router>
